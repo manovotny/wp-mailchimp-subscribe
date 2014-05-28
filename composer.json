@@ -1,0 +1,17 @@
+{
+  "name": "manovotny/wp-mailchimp-subscribe",
+  "version": "0.0.0",
+  "description": "A MailChimp subscription widget for WordPress.",
+  "type": "library",
+  "homepage": "https://github.com/manovotny/wp-mailchimp-subscribe/",
+  "license": "GPL-3.0+",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/manovotny/wp-file-util"
+    }
+  ],
+  "require": {
+    "manovotny/wp-file-util": "0.1.1"
+    }
+}
