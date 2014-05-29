@@ -7,6 +7,9 @@ module.exports = function (grunt) {
             'admin/css',
             'css'
         ],
+        js: [
+            'js/*.min.js'
+        ],
         lib: [
             'composer.lock',
             'lib'

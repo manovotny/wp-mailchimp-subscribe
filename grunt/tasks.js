@@ -29,7 +29,9 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('js', [
-        'jslint'
+        'clean:js',
+        'jslint',
+        'uglify'
     ]);
 
 };

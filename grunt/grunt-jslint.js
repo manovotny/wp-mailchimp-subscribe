@@ -18,6 +18,7 @@ module.exports = function (grunt) {
                 'Gruntfile.js',
                 'grunt/*.js',
                 'js/**/*.js',
+                'js/**/!*.min.js',
                 'package.json'
             ]
         }

@@ -172,7 +172,7 @@ class WP_MailChimp_Subscribe extends WP_Widget {
         $file_util = WP_File_Util::get_instance();
         $url_util = WP_Url_Util::get_instance();
 
-        $path = $file_util->get_absolute_path( __DIR__, 'js/subscribe.js' );
+        $path = $file_util->get_absolute_path( __DIR__, 'js/subscribe.min.js' );
         $url = $url_util->convert_path_to_url( $path );
 
         wp_enqueue_script( $this->slug . '-script', $url, array('jquery'), 'TODO', true );
