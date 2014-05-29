@@ -6,6 +6,7 @@
         DEFAULT_SUCCESS_MESSAGE = 'Almost finished... We need to confirm your email address. To complete the subscription process, please click the link in the email we just sent you.',
 
         $form,
+        $input,
         $message,
         $submit;
 
@@ -19,6 +20,14 @@
 
     function clearMessage() {
         $message.html('');
+    }
+
+    function setFocusOnEmailInput() {
+        $input.focus();
+    }
+
+    function resetFormControls() {
+        $input.val('');
     }
 
     function displayErrorMessage(message) {
@@ -44,8 +53,10 @@
     function onSuccess(data) {
         if ('success' === data.result) {
             displaySuccessMessage(data.msg);
+            resetFormControls();
         } else {
             displayErrorMessage(data.msg);
+            setFocusOnEmailInput();
         }
     }
 
@@ -55,6 +66,8 @@
         clearMessage();
 
         $submit.prop('disabled', true);
+
+        $input.blur();
 
         $.ajax({
             crossDomain: true,
@@ -71,8 +84,9 @@
 
     function init() {
         $form = $('.wp-mailchimp-subscribe-class form');
-        $submit = $form.find(':submit');
+        $input = $form.find('input');
         $message = $form.find('.message');
+        $submit = $form.find(':submit');
 
         updateFormForJson();
 
