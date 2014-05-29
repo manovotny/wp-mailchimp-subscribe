@@ -20,6 +20,11 @@
  * GitHub Plugin URI: https://github.com/manovotny/wp-mailchimp-subscribe
  */
 
+/* Classes
+---------------------------------------------------------------------------------- */
+
+require_once __DIR__ . '/classes/class-wp-mailchimp-subscribe.php';
+
 /* Libraries
 ---------------------------------------------------------------------------------- */
 

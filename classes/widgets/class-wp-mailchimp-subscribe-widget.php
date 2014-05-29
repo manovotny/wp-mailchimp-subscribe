@@ -8,7 +8,11 @@ class WP_MailChimp_Subscribe_Widget extends WP_Widget {
 
     protected $slug = 'wp-mailchimp-subscribe';
 
+    private $version;
+
     public function __construct() {
+
+        $this->version = WP_MailChimp_Subscribe::get_instance()->get_version();
 
         parent::__construct(
             $this->slug,
@@ -125,7 +129,7 @@ class WP_MailChimp_Subscribe_Widget extends WP_Widget {
         $path = $file_util->get_absolute_path( __DIR__, '../../admin/css/subscribe.min.css' );
         $url = $url_util->convert_path_to_url( $path );
 
-        wp_enqueue_style( $this->slug . '-admin-styles', $url, null, 'TODO' );
+        wp_enqueue_style( $this->slug . '-admin-styles', $url, null, $this->version );
 
     }
 
@@ -137,7 +141,7 @@ class WP_MailChimp_Subscribe_Widget extends WP_Widget {
         $path = $file_util->get_absolute_path( __DIR__, '../../css/subscribe.min.css' );
         $url = $url_util->convert_path_to_url( $path );
 
-        wp_enqueue_style( $this->slug . '-styles', $url, null, 'TODO' );
+        wp_enqueue_style( $this->slug . '-styles', $url, null, $this->version );
 
     }
 
@@ -149,7 +153,7 @@ class WP_MailChimp_Subscribe_Widget extends WP_Widget {
         $path = $file_util->get_absolute_path( __DIR__, '../../js/subscribe.min.js' );
         $url = $url_util->convert_path_to_url( $path );
 
-        wp_enqueue_script( $this->slug . '-script', $url, array('jquery'), 'TODO', true );
+        wp_enqueue_script( $this->slug . '-script', $url, array('jquery'), $this->version, true );
 
     }
 
