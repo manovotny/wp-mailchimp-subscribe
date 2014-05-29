@@ -1,4 +1,4 @@
-.item-label,
-.item-input {
+.wp-mailchimp-subscribe .label,
+.wp-mailchimp-subscribe .control {
   display: block;
   width: 100%; }

@@ -21,6 +21,7 @@ module.exports = function (grunt) {
                 'package.json'
             ],
             tasks: [
+                'css',
                 'js'
             ]
         }

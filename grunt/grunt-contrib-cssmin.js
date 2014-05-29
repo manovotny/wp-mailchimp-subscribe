@@ -15,6 +15,19 @@ module.exports = function (grunt) {
             ],
             dest: 'admin/css',
             ext: '.min.css'
+        },
+        widget: {
+            options: {
+                keepSpecialComments: 0
+            },
+            expand: true,
+            cwd: 'css',
+            src: [
+                '*.css',
+                '!*.min.css'
+            ],
+            dest: 'css',
+            ext: '.min.css'
         }
     });
 

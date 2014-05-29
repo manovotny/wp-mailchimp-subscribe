@@ -1,0 +1,14 @@
+/* Clearfix
+---------------------------------------------- */
+#sidebar .wp-mailchimp-subscribe-class .items, #sidebar .wp-mailchimp-subscribe-class .actions {
+  list-style-type: none;
+  padding-left: 0; }
+
+#sidebar .wp-mailchimp-subscribe-class .item {
+  width: 100%; }
+#sidebar .wp-mailchimp-subscribe-class .label {
+  display: none; }
+#sidebar .wp-mailchimp-subscribe-class .control {
+  width: 100%; }
+#sidebar .wp-mailchimp-subscribe-class .action {
+  text-align: right; }
