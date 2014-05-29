@@ -40,7 +40,7 @@ class WP_MailChimp_Subscribe {
     ---------------------------------------------- */
 
     /**
-     * Plugin version, used for cache-busting of style and script file references.
+     * Version, used for cache-busting of style and script file references.
      *
      * @var string
      */
