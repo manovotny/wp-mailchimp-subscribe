@@ -1,23 +1,5 @@
-/* Clearfix
+/* Flat List
 ---------------------------------------------- */
-
-%clearfix {
-
-    &:before,
-    &:after {
-
-        content: ' ';
-        display: table;
-
-    }
-
-    &:after {
-
-        clear: both;
-
-    }
-
-}
 
 %flat-list {
 
@@ -63,6 +45,13 @@
     .action {
 
         text-align: right;
+
+    }
+
+    .message {
+
+        font-size: 90%;
+        font-style: italic;
 
     }
 
