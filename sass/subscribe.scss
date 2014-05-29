@@ -1,48 +1,32 @@
 @import '../lib/sass-placeholdeers/lists';
 
 #sidebar .wp-mailchimp-subscribe-widget {
-
     .items {
-
         @extend %flat-list;
-
     }
 
     .item {
-
         width: 100%;
-
     }
 
     .label {
-
         display: none;
-
     }
 
     .control {
-
         width: 100%;
-
     }
 
     .actions {
-
         @extend %flat-list;
-
     }
 
     .action {
-
         text-align: right;
-
     }
 
     .message {
-
         font-size: 90%;
         font-style: italic;
-
     }
-
 }
