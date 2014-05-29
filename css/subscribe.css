@@ -1,8 +1,6 @@
-/* Flat List
----------------------------------------------- */
 #sidebar .wp-mailchimp-subscribe-widget .items, #sidebar .wp-mailchimp-subscribe-widget .actions {
-  list-style-type: none;
-  padding-left: 0; }
+  padding-left: 0;
+  list-style-type: none; }
 
 #sidebar .wp-mailchimp-subscribe-widget .item {
   width: 100%; }

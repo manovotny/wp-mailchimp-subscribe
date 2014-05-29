@@ -14,6 +14,13 @@
     "wordpress"
   ],
   "authors": [
-    { "name": "Michael Novotny", "email": "manovotny@gmail.com"," homepage": "http://manovotny.com" }
-  ]
+    {
+      "name": "Michael Novotny",
+      "email": "manovotny@gmail.com",
+      "homepage": "http://manovotny.com"
+    }
+  ],
+  "dependencies": {
+    "sass-placeholders": "git://github.com/manovotny/sass-placeholders.git#0.1.0"
+  }
 }
