@@ -1,9 +1,16 @@
-<form action="<?php echo $url; ?>" method="get">
+<form action="<?php echo $url; ?>" method="post">
     <fieldset class="fields">
         <ul class="items">
             <li class="item">
                 <label class="label" for="mailchimp-signup-email">Email</label>
-                <input class="control" id="mailchimp-signup-email" name="EMAIL" type="text" placeholder="Email" />
+                <input
+                    id="mailchimp-signup-email"
+                    class="control"
+                    name="EMAIL"
+                    placeholder="Email"
+                    required
+                    type="email"
+                />
             </li>
         </ul>
         <ul class="actions">

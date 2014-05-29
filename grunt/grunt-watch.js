@@ -12,7 +12,7 @@ module.exports = function (grunt) {
                 'css'
             ]
         },
-        js: {
+        dependencies: {
             files: [
                 'bower.json',
                 'composer.json',
@@ -22,6 +22,14 @@ module.exports = function (grunt) {
             ],
             tasks: [
                 'css',
+                'js'
+            ]
+        },
+        js: {
+            files: [
+                'js/**/*.js'
+            ],
+            tasks: [
                 'js'
             ]
         }

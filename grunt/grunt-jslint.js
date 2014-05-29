@@ -7,6 +7,7 @@ module.exports = function (grunt) {
             directives: {
                 browser: true,
                 predef: [
+                    'jQuery',
                     'module',
                     'require'
                 ]
@@ -15,8 +16,9 @@ module.exports = function (grunt) {
                 'bower.js',
                 'composer.json',
                 'Gruntfile.js',
-                'package.json',
-                'grunt/*.js'
+                'grunt/*.js',
+                'js/**/*.js',
+                'package.json'
             ]
         }
     });
