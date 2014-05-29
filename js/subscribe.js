@@ -83,14 +83,17 @@
     }
 
     function init() {
-        $form = $('.wp-mailchimp-subscribe-class form');
-        $input = $form.find('input');
-        $message = $form.find('.message');
-        $submit = $form.find(':submit');
+        $form = $('.wp-mailchimp-subscribe-widget form');
 
-        updateFormForJson();
+        if ($form.length) {
+            $input = $form.find('input');
+            $message = $form.find('.message');
+            $submit = $form.find(':submit');
 
-        $form.on('submit', subscribe);
+            updateFormForJson();
+
+            $form.on('submit', subscribe);
+        }
     }
 
     init();

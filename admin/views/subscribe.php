@@ -1,4 +1,4 @@
-<fieldset class="wp-mailchimp-subscribe fields">
+<fieldset class="wp-mailchimp-subscribe-widget fields">
     <ul class="items">
         <li class="item">
             <label class="label" for="<?php esc_attr_e( $this->get_field_id( 'title' ) ); ?>">Title</label>

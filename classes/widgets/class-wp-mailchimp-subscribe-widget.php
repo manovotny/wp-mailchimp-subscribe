@@ -27,7 +27,7 @@ class WP_MailChimp_Subscribe_Widget extends WP_Widget {
      *
      * @var string
      */
-    protected $slug = 'wp-mailchimp-subscribe';
+    protected $slug = 'wp-mailchimp-subscribe-widget';
 
     /* Url Util
     ---------------------------------------------- */
@@ -65,7 +65,7 @@ class WP_MailChimp_Subscribe_Widget extends WP_Widget {
             $this->slug,
             __( 'MailChimp Subscription', $this->slug ),
             array(
-                'classname'  => $this->slug.'-class',
+                'classname'  => $this->slug,
                 'description' => __( 'A MailChimp subscription widget for WordPress.', $this->slug )
             )
         );
