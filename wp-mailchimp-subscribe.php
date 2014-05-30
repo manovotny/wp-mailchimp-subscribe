@@ -29,6 +29,7 @@ require_once __DIR__ . '/classes/class-wp-mailchimp-subscribe.php';
 ---------------------------------------------------------------------------------- */
 
 require_once __DIR__ . '/lib/wp-file-util/wp-file-util.php';
+require_once __DIR__ . '/lib/wp-url-util/wp-url-util.php';
 
 /* Widgets
 ---------------------------------------------------------------------------------- */
