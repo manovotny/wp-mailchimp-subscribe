@@ -6,7 +6,9 @@ module.exports = function (grunt) {
         js: {
             directives: {
                 browser: true,
+                nomen: true,
                 predef: [
+                    '_',
                     'jQuery',
                     'module',
                     'require'

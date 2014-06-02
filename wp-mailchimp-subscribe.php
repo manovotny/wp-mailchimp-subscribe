@@ -20,6 +20,11 @@
  * GitHub Plugin URI: https://github.com/manovotny/wp-mailchimp-subscribe
  */
 
+/* Support
+---------------------------------------------------------------------------------- */
+
+wp_enqueue_script( 'underscore' );
+
 /* Classes
 ---------------------------------------------------------------------------------- */
 
