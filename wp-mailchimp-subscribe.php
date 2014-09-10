@@ -20,15 +20,14 @@
  * GitHub Plugin URI: https://github.com/manovotny/wp-mailchimp-subscribe
  */
 
-/* Support
+/* Access
 ---------------------------------------------------------------------------------- */
 
-wp_enqueue_script( 'underscore' );
+if ( ! defined( 'WPINC' ) ) {
 
-/* Classes
----------------------------------------------------------------------------------- */
+    die;
 
-require_once __DIR__ . '/classes/class-wp-mailchimp-subscribe.php';
+}
 
 /* Libraries
 ---------------------------------------------------------------------------------- */
@@ -36,9 +35,24 @@ require_once __DIR__ . '/classes/class-wp-mailchimp-subscribe.php';
 require_once __DIR__ . '/lib/wp-file-util/wp-file-util.php';
 require_once __DIR__ . '/lib/wp-url-util/wp-url-util.php';
 
+/* Classes
+---------------------------------------------------------------------------------- */
+
+if ( ! class_exists( 'WP_MailChimp_Subscribe' ) ) {
+
+    require_once __DIR__ . '/classes/class-wp-mailchimp-subscribe.php';
+
+    WP_MailChimp_Subscribe::get_instance();
+
+}
+
 /* Widgets
 ---------------------------------------------------------------------------------- */
 
-require_once __DIR__ . '/classes/widgets/class-wp-mailchimp-subscribe-widget.php';
+if ( ! class_exists( 'WP_MailChimp_Subscribe_Widget' ) ) {
 
-add_action( 'widgets_init', create_function( '', 'register_widget("WP_MailChimp_Subscribe_Widget");' ) );
+    require_once __DIR__ . '/classes/widgets/class-wp-mailchimp-subscribe-widget.php';
+
+    add_action( 'widgets_init', create_function( '', 'register_widget( "WP_MailChimp_Subscribe_Widget" );' ) );
+
+}

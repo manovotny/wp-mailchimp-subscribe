@@ -1,7 +1,6 @@
 <?php
 /**
  * @package WP_MailChimp_Subscribe
- * @author Michael Novotny <manovotny@gmail.com>
  */
 
 class WP_MailChimp_Subscribe {
@@ -54,6 +53,30 @@ class WP_MailChimp_Subscribe {
     public function get_version() {
 
         return $this->version;
+
+    }
+
+    /* Constructor
+    ---------------------------------------------------------------------------------- */
+
+    /**
+     * Initialize class.
+     */
+    public function __construct() {
+
+        add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+
+    }
+
+    /* Methods
+    ---------------------------------------------------------------------------------- */
+
+    /**
+     * Enqueues scripts.
+     */
+    public function enqueue_scripts() {
+
+        wp_enqueue_script( 'underscore' );
 
     }
 

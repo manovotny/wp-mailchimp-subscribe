@@ -1,7 +1,6 @@
 <?php
 /**
  * @package WP_MailChimp_Subscribe
- * @author Michael Novotny <manovotny@gmail.com>
  */
 
 class WP_MailChimp_Subscribe_Widget extends WP_Widget {
@@ -230,7 +229,7 @@ class WP_MailChimp_Subscribe_Widget extends WP_Widget {
         $path = $this->file_util->get_absolute_path( __DIR__, '../../js/subscribe.min.js' );
         $url = $this->url_util->convert_path_to_url( $path );
 
-        wp_enqueue_script( $this->slug . '-script', $url, array('jquery'), $this->version, true );
+        wp_enqueue_script( $this->slug . '-script', $url, array( 'jquery' ), $this->version, true );
 
     }
 
