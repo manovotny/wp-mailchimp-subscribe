@@ -12,7 +12,7 @@
  * Plugin Name: WP MailChimp Subscribe
  * Plugin URI: https://github.com/manovotny/wp-mailchimp-subscribe
  * Description: A MailChimp subscription widget for WordPress.
- * Version: 0.2.0
+ * Version: 1.0.0
  * Author: Michael Novotny
  * Author URI: http://manovotny.com
  * License: GPL-3.0+
