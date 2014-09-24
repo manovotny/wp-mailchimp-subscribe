@@ -1,0 +1,46 @@
+default:
+  - build
+
+init:
+  - config
+  - shell:install
+  - update
+  - build
+
+config:
+  - replace
+  - rename
+
+build:
+  - clean
+  - lint
+  - test
+  - browserify:admin
+  - browserify:site
+  - sass
+
+generate:
+  - autoprefixer
+  - cssmin
+  - makepot
+  - browserify
+
+update:
+  - shell:update
+  - curl
+  - build
+
+lint:
+  - jshint
+  - phplint
+  - scsslint
+
+test:
+  - phpunit
+
+release:
+  - build
+  - replace:project_version
+  - replace:update_project
+  - generate
+  - shell:release

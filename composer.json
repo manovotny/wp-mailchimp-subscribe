@@ -3,20 +3,43 @@
     "version": "1.0.0",
     "description": "A MailChimp subscription widget for WordPress.",
     "type": "library",
-    "homepage": "https://github.com/manovotny/wp-mailchimp-subscribe/",
-    "license": "GPL-3.0+",
-    "repositories": [
+    "homepage": "https://github.com/manovotny/wp-mailchimp-subscribe",
+    "authors": [
         {
-            "type": "vcs",
-            "url": "https://github.com/manovotny/wp-file-util"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/manovotny/wp-url-util"
+            "name": "Michael Novotny",
+            "email": "manovotny@gmail.com",
+            "homepage": "http://manovotny.com",
+            "role": "Developer"
         }
     ],
+    "license": "GPL-3.0+",
+    "keywords": [
+        "email",
+        "mailchimp",
+        "rss",
+        "subscribe",
+        "wordpress"
+    ],
     "require": {
-        "manovotny/wp-file-util": "0.1.1",
-        "manovotny/wp-url-util": "0.1.0"
+        "manovotny/wp-url-util": "~1.0"
+    },
+    "require-dev": {
+        "manovotny/wp-phpunit-helpers": "0.1.0",
+        "phpunit/phpunit": "4.1.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src"
+        ],
+        "files": [
+            "wp-mailchimp-subscribe.php"
+        ]
+    },
+    "autoload-dev": {
+        "classmap": [
+            "vendor/phpunit",
+            "vendor/sebastian",
+            "vendor/symfony"
+        ]
     }
 }
