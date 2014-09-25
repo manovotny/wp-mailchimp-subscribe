@@ -20,7 +20,8 @@
             "homepage": "http://manovotny.com"
         }
     ],
-    "dependencies": {
-        "sass-lint-config": "git://github.com/manovotny/sass-lint-config.git#0.1.0"
+    "devDependencies": {
+        "sass-lint-config": "git://github.com/manovotny/sass-lint-config.git#0.1.0",
+        "scut": "~1.0.1"
     }
 }

@@ -1,0 +1,15 @@
+#sidebar .wp-mailchimp-subscribe-widget .actions, #sidebar .wp-mailchimp-subscribe-widget .items {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0; }
+
+#sidebar .wp-mailchimp-subscribe-widget .control, #sidebar .wp-mailchimp-subscribe-widget .item {
+  width: 100%; }
+#sidebar .wp-mailchimp-subscribe-widget .label {
+  display: none; }
+#sidebar .wp-mailchimp-subscribe-widget .action {
+  text-align: right; }
+#sidebar .wp-mailchimp-subscribe-widget .message {
+  font-size: 90%;
+  font-style: italic; }

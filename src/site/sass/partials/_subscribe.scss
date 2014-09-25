@@ -1,24 +1,16 @@
-@import '../lib/sass-placeholdeers/lists';
-
 #sidebar .wp-mailchimp-subscribe-widget {
+    .actions,
     .items {
-        @extend %flat-list;
+        @extend %scut-list-unstyled;
     }
 
+    .control,
     .item {
         width: 100%;
     }
 
     .label {
         display: none;
-    }
-
-    .control {
-        width: 100%;
-    }
-
-    .actions {
-        @extend %flat-list;
     }
 
     .action {
