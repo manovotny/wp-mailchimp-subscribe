@@ -1,7 +1,7 @@
 #sidebar .wp-mailchimp-subscribe-widget {
     .actions,
     .items {
-        @extend %scut-list-unstyled;
+        @include scut-list-unstyled(false);
     }
 
     .control,
