@@ -227,15 +227,23 @@ class WP_MailChimp_Subscribe_Widget extends WP_Widget {
      */
     public function register_widget_scripts() {
 
+        $wp_mailchimp_subscribe = WP_MailChimp_Subscribe::get_instance();
+
+        $localization_handle = $wp_mailchimp_subscribe->get_localization_handle();
+        $domain = $wp_mailchimp_subscribe->get_slug();
+
         $handle = $this->slug . '-script';
         $relative_path = __DIR__ . '/../../site/js/';
         $filename = 'bundle.min.js';
         $filename_debug = 'bundle.concat.js';
         $dependencies = array( 'jquery' );
 
-//        $data = array(
-//            'asdf' => ''
-//        );
+        $data = array(
+            'options' => array(
+                'default_error_message' => __( 'Hrm... Something\'s not working right. Please try again later or let us know something is wrong.', $domain ),
+                'default_success_message' => __( 'Almost finished... We need to confirm your email address. To complete the subscription process, please click the link in the email we just sent you.', $domain )
+            )
+        );
 
         $options = new WP_Enqueue_Options(
             $handle,
@@ -246,7 +254,7 @@ class WP_MailChimp_Subscribe_Widget extends WP_Widget {
             $this->version
         );
 
-//        $options->set_localization( $this->get_localization_handle(), $data );
+        $options->set_localization( $localization_handle, $data );
 
         $this->wp_enqueue_util->enqueue_script( $options );
 

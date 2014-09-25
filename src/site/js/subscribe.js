@@ -2,8 +2,7 @@
 
     'use strict';
 
-    var DEFAULT_ERROR_MESSAGE = 'Hrm... Something\'s not working right. Please try again later or let us know something is wrong.',
-        DEFAULT_SUCCESS_MESSAGE = 'Almost finished... We need to confirm your email address. To complete the subscription process, please click the link in the email we just sent you.';
+    var options = require('./subscribe-options');
 
     function updateFormActions($forms) {
         var $form,
@@ -32,7 +31,7 @@
 
     function displayErrorMessage($form, message) {
         if (!message) {
-            message = DEFAULT_ERROR_MESSAGE;
+            message = options.defaultErrorMessage;
         }
 
         $form.find('.message').html(message);
@@ -40,7 +39,7 @@
 
     function displaySuccessMessage($form, message) {
         if (!message) {
-            message = DEFAULT_SUCCESS_MESSAGE;
+            message = options.defaultSuccessMessage;
         }
 
         $form.find('.message').html(message);

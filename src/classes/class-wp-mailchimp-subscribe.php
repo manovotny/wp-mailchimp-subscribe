@@ -35,6 +35,41 @@ class WP_MailChimp_Subscribe {
 
     }
 
+    /* Localization Handle
+    ---------------------------------------------- */
+
+    /**
+     * Getter method for localization handle.
+     *
+     * @return string Localization handle.
+     */
+    public function get_localization_handle() {
+
+        return str_replace( '-', '_', $this->slug );
+
+    }
+
+    /* Slug
+    ---------------------------------------------- */
+
+    /**
+     * Slug to reference class.
+     *
+     * @var string
+     */
+    protected $slug = 'wp-mailchimp-subscribe';
+
+    /**
+     * Getter method for slug.
+     *
+     * @return string Class slug.
+     */
+    public function get_slug() {
+
+        return $this->slug;
+
+    }
+
     /* Version
     ---------------------------------------------- */
 
