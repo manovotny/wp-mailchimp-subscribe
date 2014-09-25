@@ -18,16 +18,6 @@ class WP_MailChimp_Subscribe_Widget extends WP_Widget {
      */
     protected $slug = 'wp-mailchimp-subscribe-widget';
 
-    /* Url Util
-    ---------------------------------------------- */
-
-    /**
-     * Instance of the WP Url Util class.
-     *
-     * @var WP_Url_Util
-     */
-    private $url_util;
-
     /* Version
     ---------------------------------------------- */
 
@@ -38,6 +28,16 @@ class WP_MailChimp_Subscribe_Widget extends WP_Widget {
      */
     private $version;
 
+    /* WP Enqueue Util
+    ---------------------------------------------- */
+
+    /**
+     * Instance of the WP Enqueue Util class.
+     *
+     * @var WP_Enqueue_Util
+     */
+    private $wp_enqueue_util;
+
     /* Constructor
     ---------------------------------------------------------------------------------- */
 
@@ -46,8 +46,8 @@ class WP_MailChimp_Subscribe_Widget extends WP_Widget {
      */
     public function __construct() {
 
-        $this->url_util = WP_Url_Util::get_instance();
         $this->version = WP_MailChimp_Subscribe::get_instance()->get_version();
+        $this->wp_enqueue_util = WP_Enqueue_Util::get_instance();
 
         parent::__construct(
             $this->slug,
@@ -90,7 +90,7 @@ class WP_MailChimp_Subscribe_Widget extends WP_Widget {
         $title = stripslashes( strip_tags( $instance[ 'title' ] ) );
         $url = stripslashes( strip_tags( $instance[ 'url' ] ) );
 
-        $view_path = realpath( __DIR__ . '../../admin/views/subscribe.php' );
+        $view_path = realpath( __DIR__ . '/../../admin/views/subscribe.php' );
 
         include $view_path;
 
@@ -156,7 +156,7 @@ class WP_MailChimp_Subscribe_Widget extends WP_Widget {
         /* ============================================================ */
 
 
-        $view_path = realpath( __DIR__ . '../../views/subscribe.php' );
+        $view_path = realpath( __DIR__ . '/../../site/views/subscribe.php' );
 
         $title = $this->get_widget_title( $args, $instance );
         $url = stripslashes( strip_tags( $instance[ 'url' ] ) );
@@ -200,10 +200,22 @@ class WP_MailChimp_Subscribe_Widget extends WP_Widget {
      */
     public function register_admin_styles() {
 
-        $path = realpath( __DIR__ . '../../admin/css/subscribe.min.css' );
-        $url = $this->url_util->convert_path_to_url( $path );
+        $handle = $this->slug . '-admin-styles';
+        $relative_path = __DIR__ . '/../../admin/css/';
+        $filename = 'wp-mailchimp-subscribe.min.css';
+        $filename_debug = 'wp-mailchimp-subscribe.css';
+        $dependencies = array();
 
-        wp_enqueue_style( $this->slug . '-admin-styles', $url, null, $this->version );
+        $options = new WP_Enqueue_Options(
+            $handle,
+            $relative_path,
+            $filename,
+            $filename_debug,
+            $dependencies,
+            $this->version
+        );
+
+        $this->wp_enqueue_util->enqueue_style( $options );
 
     }
 
@@ -215,10 +227,28 @@ class WP_MailChimp_Subscribe_Widget extends WP_Widget {
      */
     public function register_widget_scripts() {
 
-        $path = realpath( __DIR__ . '../../js/subscribe.min.js' );
-        $url = $this->url_util->convert_path_to_url( $path );
+        $handle = $this->slug . '-script';
+        $relative_path = __DIR__ . '/../../site/js/';
+        $filename = 'bundle.min.js';
+        $filename_debug = 'bundle.concat.js';
+        $dependencies = array( 'jquery' );
 
-        wp_enqueue_script( $this->slug . '-script', $url, array( 'jquery' ), $this->version, true );
+//        $data = array(
+//            'asdf' => ''
+//        );
+
+        $options = new WP_Enqueue_Options(
+            $handle,
+            $relative_path,
+            $filename,
+            $filename_debug,
+            $dependencies,
+            $this->version
+        );
+
+//        $options->set_localization( $this->get_localization_handle(), $data );
+
+        $this->wp_enqueue_util->enqueue_script( $options );
 
     }
 
@@ -227,10 +257,22 @@ class WP_MailChimp_Subscribe_Widget extends WP_Widget {
      */
     public function register_widget_styles() {
 
-        $path = realpath( __DIR__ . '../../css/subscribe.min.css' );
-        $url = $this->url_util->convert_path_to_url( $path );
+        $handle = $this->slug . '-styles';
+        $relative_path = __DIR__ . '/../../site/css/';
+        $filename = 'wp-mailchimp-subscribe.min.css';
+        $filename_debug = 'wp-mailchimp-subscribe.css';
+        $dependencies = array();
 
-        wp_enqueue_style( $this->slug . '-styles', $url, null, $this->version );
+        $options = new WP_Enqueue_Options(
+            $handle,
+            $relative_path,
+            $filename,
+            $filename_debug,
+            $dependencies,
+            $this->version
+        );
+
+        $this->wp_enqueue_util->enqueue_style( $options );
 
     }
 

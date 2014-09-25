@@ -21,6 +21,7 @@
         "wordpress"
     ],
     "require": {
+        "manovotny/wp-enqueue-util": "~1.1",
         "manovotny/wp-url-util": "~1.0"
     },
     "require-dev": {
