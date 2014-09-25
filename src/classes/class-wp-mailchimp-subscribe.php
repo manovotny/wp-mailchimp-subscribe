@@ -78,7 +78,7 @@ class WP_MailChimp_Subscribe {
      *
      * @var string
      */
-    protected $version = '1.0.0';
+    protected $version = '1.1.0';
 
     /**
      * Getter method for version.

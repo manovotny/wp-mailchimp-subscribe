@@ -16,11 +16,11 @@ module.exports = (function () {
             name: 'WP MailChimp Subscribe',
             slug: 'wp-mailchimp-subscribe',
             url: 'https://github.com/manovotny/wp-mailchimp-subscribe',
-            version: '1.0.0'
+            version: '1.1.0'
         },
         translations: {
-            domain: 'TRANSLATIONS_DOMAIN',
-            path: 'TRANSLATIONS_PATH'
+            domain: 'wp-mailchimp-subscribe',
+            path: 'lang'
         }
     };
 
