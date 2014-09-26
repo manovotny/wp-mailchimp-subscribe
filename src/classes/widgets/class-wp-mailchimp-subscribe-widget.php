@@ -254,7 +254,8 @@ class WP_MailChimp_Subscribe_Widget extends WP_Widget {
             $filename,
             $filename_debug,
             $dependencies,
-            $this->version
+            $this->version,
+            true
         );
 
         $options->set_localization( $localization_handle, $data );
