@@ -236,7 +236,10 @@ class WP_MailChimp_Subscribe_Widget extends WP_Widget {
         $relative_path = __DIR__ . '/../../site/js/';
         $filename = 'bundle.min.js';
         $filename_debug = 'bundle.concat.js';
-        $dependencies = array( 'jquery' );
+        $dependencies = array(
+            'jquery',
+            'underscore'
+        );
 
         $data = array(
             'options' => array(
