@@ -1,6 +1,6 @@
 {
     "name": "manovotny/wp-mailchimp-subscribe",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "A MailChimp subscription widget for WordPress.",
     "type": "library",
     "homepage": "https://github.com/manovotny/wp-mailchimp-subscribe",

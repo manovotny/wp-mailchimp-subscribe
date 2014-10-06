@@ -25,7 +25,7 @@ module.exports = (function () {
             slug: 'wp-mailchimp-subscribe',
             type: 'plugin', // Should be `plugin` or `theme`.
             url: 'https://github.com/manovotny/wp-mailchimp-subscribe',
-            version: '1.1.1'
+            version: '1.1.2'
         }
     };
 

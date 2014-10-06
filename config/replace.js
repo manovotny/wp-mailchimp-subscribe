@@ -16,7 +16,7 @@ module.exports = (function () {
             name: 'WP MailChimp Subscribe',
             slug: 'wp-mailchimp-subscribe',
             url: 'https://github.com/manovotny/wp-mailchimp-subscribe',
-            version: '1.1.1'
+            version: '1.1.2'
         },
         translations: {
             domain: 'wp-mailchimp-subscribe',
